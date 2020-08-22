@@ -343,7 +343,7 @@ def get_waka_time_stats():
             stats = stats + '💻 ' + translate['operating system'] + ': \n' + os_list + '\n\n'
 
         stats += '```\n\n'
-        if True:
+        if empty:
             return ""
     return stats
 
