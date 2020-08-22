@@ -287,7 +287,6 @@ def generate_commit_list(tz):
 
 
 def get_waka_time_stats():
-	return ""
     stats = ''
     request = requests.get(
         f"https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key={waka_key}")
@@ -344,6 +343,7 @@ def get_waka_time_stats():
             stats = stats + '💻 ' + translate['operating system'] + ': \n' + os_list + '\n\n'
 
         stats += '```\n\n'
+		empty = True
         if empty:
             return ""
     return stats
