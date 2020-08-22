@@ -301,8 +301,8 @@ def get_waka_time_stats():
             empty = False
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
 
-        stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
-        stats += '```text\n'
+        #stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
+        #stats += '```text\n'
         if showTimeZone.lower() in truthy:
             empty = False
             tzone = data['data']['timezone']
@@ -342,7 +342,7 @@ def get_waka_time_stats():
                 os_list = make_list(data['data']['operating_systems'])
             stats = stats + '💻 ' + translate['operating system'] + ': \n' + os_list + '\n\n'
 
-        stats += '```\n\n'
+        #stats += '```\n\n'
         if empty:
             return ""
     return stats
@@ -451,8 +451,8 @@ def get_stats(github):
     if show_short_info.lower() in truthy:
         stats += get_short_info(github)
 
-    #if show_waka_stats.lower() in truthy:
-        #stats += get_waka_time_stats()
+    if show_waka_stats.lower() in truthy:
+        stats += get_waka_time_stats()
 
     if showLanguagePerRepo.lower() in truthy:
         stats = stats + generate_language_per_repo(repositoryList) + '\n\n'
