@@ -221,9 +221,9 @@ def generate_commit_list(tz):
                     morning += 1
                 if 12 <= hour < 18:
                     daytime += 1
-                if 18 <= hour < 24:
+                if 18 <= hour < 21:
                     evening += 1
-                if 22 <= hour < 5:
+                if 21 <= hour < 5:
                     night += 1
 
                 if weekday == "Monday":
@@ -451,8 +451,8 @@ def get_stats(github):
     if show_short_info.lower() in truthy:
         stats += get_short_info(github)
 
-    if show_waka_stats.lower() in truthy:
-        stats += get_waka_time_stats()
+    #if show_waka_stats.lower() in truthy:
+        #stats += get_waka_time_stats()
 
     if showLanguagePerRepo.lower() in truthy:
         stats = stats + generate_language_per_repo(repositoryList) + '\n\n'
