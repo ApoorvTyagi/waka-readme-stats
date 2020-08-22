@@ -221,7 +221,7 @@ def generate_commit_list(tz):
                     morning += 1
                 if 12 <= hour < 18:
                     daytime += 1
-                if 18 <= hour < 0:
+                if 18 <= hour < 24:
                     evening += 1
                 if 0 <= hour < 6:
                     night += 1
@@ -302,7 +302,7 @@ def get_waka_time_stats():
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
 
         #stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
-        stats += '```text\n'
+        #stats += '```text\n'
         if showTimeZone.lower() in truthy:
             empty = False
             tzone = data['data']['timezone']
@@ -342,7 +342,7 @@ def get_waka_time_stats():
                 os_list = make_list(data['data']['operating_systems'])
             stats = stats + '💻 ' + translate['operating system'] + ': \n' + os_list + '\n\n'
 
-        stats += '```\n\n'
+        #stats += '```\n\n'
         if empty:
             return ""
     return stats
