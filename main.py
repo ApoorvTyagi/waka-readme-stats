@@ -218,13 +218,13 @@ def generate_commit_list(tz):
                 hour = date.hour
                 weekday = date.strftime('%A')
                 #UTC time
-                if 1 <= hour < 7:
+                if 6 <= hour < 12:
                     morning += 1
-                if 7 <= hour < 12:
+                if 12 <= hour < 18:
                     daytime += 1
-                if 12 <= hour < 17:
+                if 18 <= hour < 24:
                     evening += 1
-                if 17 <= hour < 1:
+                if 0 <= hour < 6:
                     night += 1
 
                 if weekday == "Monday":
