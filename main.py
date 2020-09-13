@@ -218,13 +218,13 @@ def generate_commit_list(tz):
                 hour = date.hour
                 weekday = date.strftime('%A')
                 #UTC time
-                if 6 <= hour < 12:
+                if 7 <= hour < 12:
                     morning += 1
-                if 12 <= hour < 18:
+                if 12 <= hour < 17:
                     daytime += 1
-                if 18 <= hour < 24:
+                if 17 <= hour < 20:
                     evening += 1
-                if 0 <= hour < 6:
+                if 20 <= hour < 6:
                     night += 1
 
                 if weekday == "Monday":
@@ -465,10 +465,6 @@ def get_stats(github):
         stats = stats + '![Chart not found](https://github.com/' + username + '/' + username + '/blob/master/charts/bar_graph.png) \n\n'
 
     return stats
-
-
-def star_me():
-    requests.put("https://api.github.com/user/starred/anmol098/waka-readme-stats", headers=headers)
     
 
 def decode_readme(data: str):
@@ -503,7 +499,6 @@ if __name__ == '__main__':
             print("Cannot find the Locale choosing default to english")
             translate = data['en']
         waka_stats = get_stats(g)
-        star_me()
         rdmd = decode_readme(contents.content)
         new_readme = generate_new_readme(stats=waka_stats, readme=rdmd)
         committer = InputGitAuthor('readme-bot', 'readme-bot@example.com')
