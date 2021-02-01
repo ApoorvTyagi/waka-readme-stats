@@ -24,7 +24,7 @@ lizard==1.17.4
 MarkupSafe==1.1.1
 matplotlib==3.3.0
 MouseInfo==0.1.2
-numpy==1.19.1
+numpy>=1.19.1
 opencv-python==4.4.0.40
 pandas==1.0.5
 paramiko==2.7.1
